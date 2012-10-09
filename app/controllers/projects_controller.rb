@@ -1,4 +1,8 @@
 class ProjectsController < ApplicationController
+before_filter :find_project, :only => [:show,
+                                       :edit,
+                                       :update,
+                                       :destroy]
   def index
     @projects = Project.all
   end
@@ -42,7 +46,3 @@ private
     redirect_to projects_path
   end
 end
-before_filter :find_project, :only => [:show,
-                                       :edit,
-                                       :update,
-                                       :destroy]
