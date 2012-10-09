@@ -47,4 +47,4 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
 end
-
+gem 'devise', '~> 1.4.3'
