@@ -7,6 +7,7 @@ before_filter :authorize_update!, :only => [:edit, :update]
 before_filter :authorize_delete!, :only => :destroy
   def new
    @ticket = @project.tickets.build
+   3.times { @ticket.assets.build }
   end
   def create
     @ticket = @project.tickets.build(params[:ticket].merge!(:user => current_user))
